@@ -365,3 +365,105 @@ site:example.com intitle:"cPanel Login"
 ```bash
 site:example.com "Server at example.com Port 443"
 ```
+
+### 🔍 **Finding Exposed Files & Directories**  
+```bash
+intitle:"index of /private" site:example.com
+```
+```bash
+site:example.com inurl:"/uploads" -intext:"no such"
+```
+```bash
+site:example.com inurl:"backup.zip" | inurl:"database.sql"
+```
+```bash
+site:example.com inurl:".ssh" | inurl:"id_rsa"
+```
+```bash
+site:example.com "Index of" "parent directory" "config"
+```
+
+### 🔑 **Finding Sensitive Credentials**  
+```bash
+site:example.com filetype:json "aws_secret_access_key"
+```
+```bash
+site:example.com filetype:log "admin password"
+```
+```bash
+site:example.com filetype:ini "smtp_password"
+```
+```bash
+site:example.com filetype:conf "vpn_password"
+```
+```bash
+site:example.com "Authorization: Bearer"
+```
+
+### 🔒 **Finding Login Pages & Admin Panels**  
+```bash
+site:example.com inurl:"/admin/login.jsp"
+```
+```bash
+site:example.com inurl:"/login.php?redirect="
+```
+```bash
+site:example.com inurl:"/controlpanel"
+```
+```bash
+site:example.com intitle:"webmail login"
+```
+```bash
+site:example.com "Please enter your username and password"
+```
+
+### 🔍 **Detecting Web Vulnerabilities**  
+```bash
+site:example.com inurl:".git/config"
+```
+```bash
+site:example.com inurl:".svn/entries"
+```
+```bash
+site:example.com inurl:"?debug=true"
+```
+```bash
+site:example.com inurl:"/phpinfo.php"
+```
+```bash
+site:example.com inurl:"/server-status"
+```
+
+### 📂 **Exposing Sensitive Information**  
+```bash
+site:example.com inurl:"/logs/error.log"
+```
+```bash
+site:example.com filetype:db "sqlite"
+```
+```bash
+site:example.com filetype:cfg "site.cfg"
+```
+```bash
+site:example.com "Usernames and passwords"
+```
+```bash
+site:example.com intext:"confidential - do not distribute"
+```
+
+### 🛠 **Detecting Outdated Software & Exposed Services**  
+```bash
+site:example.com "Apache/2.2.22" -apache.org
+```
+```bash
+site:example.com inurl:"/cgi-bin/test.cgi"
+```
+```bash
+site:example.com "X-Powered-By: ASP.NET 2.0"
+```
+```bash
+site:example.com inurl:"/phpmyadmin/setup.php"
+```
+```bash
+site:example.com "Server: Microsoft-IIS/6.0"
+```

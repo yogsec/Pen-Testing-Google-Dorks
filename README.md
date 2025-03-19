@@ -162,6 +162,104 @@ site:example.com intitle:"Webmin"
 ```
 Finds exposed Webmin panels.  
 
+### 🔍 **Finding Open Directories & Exposed Data**  
+```bash
+intitle:"index of /private" site:example.com
+```
+```bash
+site:example.com intitle:"index of /" "backup"
+```
+```bash
+site:example.com intitle:"index of /" "config"
+```
+```bash
+site:example.com inurl:/admin/backup
+```
+```bash
+site:example.com filetype:conf "mysql" | "nginx"
+```
 
+### 🔑 **Finding Leaked Credentials & Sensitive Files**  
+```bash
+site:example.com filetype:sql "INSERT INTO"
+```
+```bash
+site:example.com filetype:xml "password"
+```
+```bash
+site:example.com filetype:ini "username"
+```
+```bash
+site:example.com filetype:log "error"
+```
+```bash
+site:example.com filetype:cfg "password"
+```
 
+### 🔒 **Finding Login & Admin Panels**  
+```bash
+site:example.com inurl:"/cpanel"
+```
+```bash
+site:example.com inurl:/admin/login
+```
+```bash
+site:example.com inurl:/user/login
+```
+```bash
+site:example.com intitle:"control panel"
+```
+```bash
+site:example.com inurl:signin | inurl:auth
+```
 
+### 🔍 **Detecting Web Vulnerabilities**  
+```bash
+site:example.com inurl:.php?id=
+```
+```bash
+site:example.com inurl:"product.php?item="
+```
+```bash
+site:example.com inurl:"view.php?page="
+```
+```bash
+site:example.com inurl:".env" "APP_KEY"
+```
+```bash
+site:example.com "PHP Parse error" | "Fatal error"
+```
+
+### 📂 **Exposing Internal Data & Source Code**  
+```bash
+site:example.com filetype:json "password"
+```
+```bash
+site:example.com filetype:yaml "secret"
+```
+```bash
+site:example.com filetype:php "config"
+```
+```bash
+site:example.com filetype:log "access.log"
+```
+```bash
+site:example.com "Index of /git"
+```
+
+### 🛠 **Detecting Outdated Software & Misconfigurations**  
+```bash
+site:example.com inurl:/cgi-bin/
+```
+```bash
+site:example.com "Apache/2.2.15"
+```
+```bash
+site:example.com "X-Powered-By: ASP.NET"
+```
+```bash
+site:example.com intitle:"phpMyAdmin"
+```
+```bash
+site:example.com "Server at example.com Port 80"
+```

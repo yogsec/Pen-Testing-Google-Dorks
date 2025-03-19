@@ -28,12 +28,6 @@ This query finds open directories with the keyword "admin" in the title.
 
 ---
 
-# 🔍 Google Dorks for Pen Testing Vulnerabilities
-
-This repository contains a list of **30 powerful Google Dorks** that help security researchers identify vulnerabilities in websites. These dorks can reveal **sensitive files, login portals, credentials, outdated software, and misconfigurations** that may pose security risks.
-
-> **Disclaimer:** Use these dorks only for ethical hacking and penetration testing with proper authorization.
-
 ## 🚀 Google Dorks List
 
 ### 🔍 **Finding Exposed Files & Directories**  
@@ -168,28 +162,6 @@ site:example.com intitle:"Webmin"
 ```
 Finds exposed Webmin panels.  
 
-## ⚠️ Legal & Ethical Considerations
-
-Using Google Dorks to access unauthorized data may violate laws and terms of service. Always ensure:  
-✅ You have **explicit permission** to test a system.  
-✅ You **do not access private data** without authorization.  
-✅ You use this knowledge **responsibly** for cybersecurity research and education.  
-
-## 🤝 Contributing
-
-Want to contribute? Feel free to submit **pull requests** with new Google Dorks or enhancements!
-
-## 📜 License
-
-This repository is open-source under the **MIT License**.
-
-## 📧 Contact
-
-For discussions, suggestions, or collaboration opportunities, reach out at **[your email]** or connect via **[LinkedIn](your-linkedin-profile)**.
-
----
-
-🚨 **Stay ethical, stay secure!** 🚨
 
 
 

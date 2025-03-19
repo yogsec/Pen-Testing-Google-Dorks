@@ -263,3 +263,105 @@ site:example.com intitle:"phpMyAdmin"
 ```bash
 site:example.com "Server at example.com Port 80"
 ```
+
+### 🔍 **Finding Open Directories & Exposed Data**  
+```bash
+intitle:"index of /admin" site:example.com
+```
+```bash
+intitle:"index of /backup" site:example.com
+```
+```bash
+site:example.com intitle:"index of /" "database"
+```
+```bash
+site:example.com filetype:cfg "passwd"
+```
+```bash
+site:example.com "Index of /ftp"
+```
+
+### 🔑 **Finding Leaked Credentials & Sensitive Files**  
+```bash
+site:example.com filetype:json "private_key"
+```
+```bash
+site:example.com filetype:csv "email,password"
+```
+```bash
+site:example.com filetype:ini "db_password"
+```
+```bash
+site:example.com "confidential" filetype:doc | filetype:pdf
+```
+```bash
+site:example.com "restricted" filetype:xlsx | filetype:ppt
+```
+
+### 🔒 **Finding Login & Admin Panels**  
+```bash
+site:example.com inurl:"/dashboard/login"
+```
+```bash
+site:example.com inurl:admin.cgi
+```
+```bash
+site:example.com intitle:"staff login"
+```
+```bash
+site:example.com "Welcome to phpMyAdmin"
+```
+```bash
+site:example.com inurl:portal/login
+```
+
+### 🔍 **Detecting Web Vulnerabilities**  
+```bash
+site:example.com inurl:".git"
+```
+```bash
+site:example.com inurl:"debug.log"
+```
+```bash
+site:example.com inurl:"config.php~"
+```
+```bash
+site:example.com inurl:"test.php"
+```
+```bash
+site:example.com inurl:"old_site"
+```
+
+### 📂 **Exposing Internal Data & Source Code**  
+```bash
+site:example.com filetype:bak "config"
+```
+```bash
+site:example.com filetype:log "credentials"
+```
+```bash
+site:example.com filetype:php "dbconnect"
+```
+```bash
+site:example.com "Index of /gitlab"
+```
+```bash
+site:example.com intext:"API_SECRET"
+```
+
+### 🛠 **Detecting Outdated Software & Misconfigurations**  
+```bash
+site:example.com inurl:/phpinfo.php
+```
+```bash
+site:example.com "Apache/2.2.15 (Unix)"
+```
+```bash
+site:example.com "X-Powered-By: JSP"
+```
+```bash
+site:example.com intitle:"cPanel Login"
+```
+```bash
+site:example.com "Server at example.com Port 443"
+```

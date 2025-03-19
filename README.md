@@ -42,4 +42,50 @@ This query finds open directories with the keyword "admin" in the title.
 - **Google Dork Scanner** – Various OSINT tools
 - **Python scripts for automated Google Dorking**
 
+---
 
+Here are 30 useful Google Dorks to detect vulnerabilities in a website:  
+
+### 🔍 **Finding Exposed Files & Directories**  
+1. `intitle:"index of" site:example.com` – Lists open directories.  
+2. `site:example.com ext:log | ext:txt | ext:conf` – Finds log, text, and config files.  
+3. `site:example.com ext:sql | ext:db` – Searches for exposed database files.  
+4. `site:example.com inurl:backup | inurl:old | inurl:bak` – Finds backup files.  
+5. `site:example.com intitle:"Index of /" "password"` – Searches for password files.  
+
+### 🔑 **Finding Sensitive Credentials**  
+6. `site:example.com inurl:wp-config.php` – Finds WordPress config files with database credentials.  
+7. `site:example.com filetype:env "DB_PASSWORD"` – Searches for exposed `.env` files.  
+8. `site:example.com "password" filetype:xls | filetype:csv | filetype:txt` – Looks for passwords in documents.  
+9. `site:example.com "API_KEY" | "secret" | "token"` – Detects leaked API keys or tokens.  
+10. `site:example.com intext:"password="` – Finds hardcoded passwords in source code.  
+
+### 🔒 **Finding Login Pages & Admin Panels**  
+11. `site:example.com inurl:admin` – Finds admin login pages.  
+12. `site:example.com inurl:login` – Searches for login pages.  
+13. `site:example.com intitle:"admin login"` – Finds admin authentication portals.  
+14. `site:example.com inurl:"phpmyadmin" | intitle:"phpmyadmin"` – Searches for phpMyAdmin panels.  
+15. `site:example.com inurl:dashboard` – Detects exposed dashboards.  
+
+### 🔍 **Detecting Web Vulnerabilities**  
+16. `site:example.com inurl:php?id=` – Looks for SQL injection-prone URLs.  
+17. `site:example.com inurl:"search.php?q="` – Finds search pages vulnerable to XSS.  
+18. `site:example.com "Apache/2.4.49" inurl:"server-status"` – Checks for vulnerable Apache servers.  
+19. `site:example.com ext:action | ext:do "username"` – Finds Java-based endpoints (Struts exploits).  
+20. `site:example.com filetype:xml inurl:"sitemap"` – Detects sitemaps with exposed paths.  
+
+### 📂 **Exposing Sensitive Information**  
+21. `site:example.com ext:json "password"` – Finds JSON files with sensitive data.  
+22. `site:example.com ext:xml "phpinfo"` – Searches for exposed PHP info pages.  
+23. `site:example.com ext:conf "nginx.conf" | "httpd.conf"` – Finds web server configuration files.  
+24. `site:example.com "Error: SQL syntax near"` – Detects SQL errors exposing database details.  
+25. `site:example.com "Warning: include("` – Searches for local file inclusion (LFI) vulnerabilities.  
+
+### 🛠 **Detecting Outdated Software & Exposed Services**  
+26. `site:example.com inurl:wp-content/plugins/` – Finds outdated WordPress plugins.  
+27. `site:example.com "Server: Apache/2.2.3"` – Detects old Apache versions.  
+28. `site:example.com "X-Powered-By: PHP/5.6"` – Finds outdated PHP versions.  
+29. `site:example.com inurl:"/cgi-bin/"` – Looks for vulnerable CGI scripts.  
+30. `site:example.com intitle:"Webmin"` – Finds exposed Webmin panels.  
+
+These Google Dorks help uncover sensitive information, misconfigurations, and potential vulnerabilities. Always use them ethically! 🔍💀

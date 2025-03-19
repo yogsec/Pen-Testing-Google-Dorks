@@ -467,3 +467,136 @@ site:example.com inurl:"/phpmyadmin/setup.php"
 ```bash
 site:example.com "Server: Microsoft-IIS/6.0"
 ```
+
+### 🔍 **Finding Exposed Files & Directories**  
+```bash
+site:example.com inurl:/uploads intitle:index.of
+```
+Lists exposed upload directories.  
+```bash
+site:example.com inurl:/private | inurl:/confidential
+```
+Finds directories labeled as private or confidential.  
+```bash
+site:example.com ext:swp | ext:bak | ext:old
+```
+Searches for temporary or backup files.  
+```bash
+site:example.com inurl:temp | inurl:cache | inurl:old
+```
+Finds temporary, cache, and old directories.  
+```bash
+site:example.com "Index of /" "userdata"
+```
+Locates user data directories.  
+
+### 🔑 **Finding Sensitive Credentials**  
+```bash
+site:example.com ext:ini "mysql_password"
+```
+Finds `.ini` files containing MySQL credentials.  
+```bash
+site:example.com "BEGIN RSA PRIVATE KEY"
+```
+Searches for leaked private SSH keys.  
+```bash
+site:example.com "Authorization: Basic"
+```
+Detects HTTP Basic Authentication headers.  
+```bash
+site:example.com filetype:cfg "admin_password"
+```
+Finds configuration files with admin credentials.  
+```bash
+site:example.com "ftp://" intext:"@"
+```
+Locates plaintext FTP credentials.  
+
+### 🔒 **Finding Login Pages & Admin Panels**  
+```bash
+site:example.com intitle:"Sign In" | intitle:"Login"
+```
+Lists general login portals.  
+```bash
+site:example.com inurl:/auth | inurl:/secure
+```
+Finds authentication pages.  
+```bash
+site:example.com inurl:/portal/login
+```
+Searches for employee or customer portals.  
+```bash
+site:example.com inurl:"/admin/" filetype:php
+```
+Locates PHP-based admin panels.  
+```bash
+site:example.com intitle:"Customer Login"
+```
+Detects exposed customer login pages.  
+
+### 🔍 **Detecting Web Vulnerabilities**  
+```bash
+site:example.com "Fatal error" "on line"
+```
+Finds error messages revealing source code details.  
+```bash
+site:example.com inurl:/debug mode
+```
+Searches for debug pages left enabled.  
+```bash
+site:example.com inurl:/staging | inurl:/test
+```
+Finds test and staging environments.  
+```bash
+site:example.com inurl:/api/docs
+```
+Checks for exposed API documentation.  
+```bash
+site:example.com inurl:"/forgot-password" | "reset your password"
+```
+Finds password reset forms that might be abused.  
+
+### 📂 **Exposing Sensitive Information**  
+```bash
+site:example.com filetype:log "error.log"
+```
+Finds log files with possible sensitive data.  
+```bash
+site:example.com ext:conf "smtp.gmail.com"
+```
+Finds SMTP configuration files.  
+```bash
+site:example.com filetype:csv "email,password"
+```
+Detects exposed CSV files with login credentials.  
+```bash
+site:example.com filetype:xlsx "username password"
+```
+Finds Excel spreadsheets with user credentials.  
+```bash
+site:example.com intext:"confidential" | intext:"classified"
+```
+Searches for confidential documents.  
+
+### 🛠 **Detecting Outdated Software & Exposed Services**  
+```bash
+site:example.com inurl:/wp-content/plugins/ intitle:"index of"
+```
+Finds outdated WordPress plugins.  
+```bash
+site:example.com "X-Powered-By: PHP/5.3"
+```
+Detects sites running old PHP versions.  
+```bash
+site:example.com inurl:/cgi-bin/ intitle:index.of
+```
+Finds CGI scripts that may be vulnerable.  
+```bash
+site:example.com "Server: nginx/1.12"
+```
+Searches for outdated Nginx versions.  
+```bash
+site:example.com intitle:"OpenVPN Admin"
+```
+Detects exposed OpenVPN administration panels.  
+
